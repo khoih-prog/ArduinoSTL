@@ -36,14 +36,19 @@ namespace std{
 	_UCXXEXPORT new_handler set_new_handler(new_handler new_p) throw();
 }
 
+// KH
+//_UCXXEXPORT void* operator new(std::size_t numBytes) throw(std::bad_alloc);
+_UCXXEXPORT void* operator new(std::size_t numBytes) throw();
 
-_UCXXEXPORT void* operator new(std::size_t numBytes) throw(std::bad_alloc);
 _UCXXEXPORT void operator delete(void* ptr) throw();
 #if __cpp_sized_deallocation
 _UCXXEXPORT void operator delete(void* ptr, std::size_t) throw();
 #endif
 
-_UCXXEXPORT void* operator new[](std::size_t numBytes) throw(std::bad_alloc);
+// KH
+//_UCXXEXPORT void* operator new[](std::size_t numBytes) throw(std::bad_alloc);
+_UCXXEXPORT void* operator new(std::size_t numBytes) throw();
+
 _UCXXEXPORT void operator delete[](void * ptr) throw();
 #if __cpp_sized_deallocation
 _UCXXEXPORT void operator delete[](void * ptr, std::size_t) throw();
